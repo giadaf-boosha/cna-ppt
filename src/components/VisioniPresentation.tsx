@@ -241,7 +241,7 @@ const VisioniPresentation = () => {
             <div className="p-4 bg-blue-50 rounded-lg">
               <CheckCircle2 className="w-6 h-6 text-green-600 mb-2" />
               <h3 className="font-semibold">Formazione</h3>
-              <p className="text-sm text-gray-600">72% richiede consulenza specifica e formazione su casi d'uso AI</p>
+              <p className="text-sm text-gray-600">72% richiede consulenza specifica e formazione su casi d&apos;uso AI</p>
             </div>
             <div className="p-4 bg-blue-50 rounded-lg">
               <Target className="w-6 h-6 text-green-600 mb-2" />
@@ -278,7 +278,7 @@ const VisioniPresentation = () => {
               • <span className="font-semibold">Necessità di supporto strutturato:</span> Focus su formazione, consulenza e finanziamenti
             </p>
             <p className="text-sm text-gray-600">
-              • <span className="font-semibold">Approccio graduale:</span> Partire da casi d'uso concreti e ad alto impatto
+              • <span className="font-semibold">Approccio graduale:</span> Partire da casi d&apos;uso concreti e ad alto impatto
             </p>
             <p className="text-sm text-gray-600">
               • <span className="font-semibold">Sviluppo competenze:</span> Priorità alla creazione di know-how interno
@@ -297,7 +297,7 @@ const VisioniPresentation = () => {
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <Brain className="w-6 h-6" />
-            Stato attuale dell'adozione AI
+            Stato attuale dell&apos;adozione AI
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -313,7 +313,7 @@ const VisioniPresentation = () => {
               <Target className="w-5 h-5 text-blue-600 mt-1" />
               <div>
                 <p className="font-semibold">8 laboratori su 10 realizzati</p>
-                <p className="text-sm text-gray-600">Formazione pratica e hands-on sull'utilizzo dell&apos;AI</p>
+                <p className="text-sm text-gray-600">Formazione pratica e hands-on sull&apos;utilizzo dell&apos;AI</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -390,7 +390,7 @@ const VisioniPresentation = () => {
               <Lightbulb className="w-5 h-5 text-yellow-600 mt-1" />
               <div>
                 <p className="font-semibold">Use cases (41.18%)</p>
-                <p className="text-sm text-gray-600">Difficoltà nell'identificare applicazioni rilevanti</p>
+                <p className="text-sm text-gray-600">Difficoltà nell&apos;identificare applicazioni rilevanti</p>
               </div>
             </div>
           </div>
@@ -411,7 +411,7 @@ const VisioniPresentation = () => {
               <Brain className="w-5 h-5 text-indigo-600 mt-1" />
               <div>
                 <p className="font-semibold">Consulenza specialistica (71.95%)</p>
-                <p className="text-sm text-gray-600">Supporto nell'identificazione e implementazione casi d'uso</p>
+                <p className="text-sm text-gray-600">Supporto nell&apos;identificazione e implementazione casi d&apos;uso</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -425,7 +425,7 @@ const VisioniPresentation = () => {
               <Banknote className="w-5 h-5 text-green-600 mt-1" />
               <div>
                 <p className="font-semibold">Finanziamenti (46.34%)</p>
-                <p className="text-sm text-gray-600">Supporto nell'accesso a bandi e incentivi</p>
+                <p className="text-sm text-gray-600">Supporto nell&apos;accesso a bandi e incentivi</p>
               </div>
             </div>
           </div>
@@ -488,7 +488,7 @@ const VisioniPresentation = () => {
               <Workflow className="w-5 h-5 text-blue-600 mt-1" />
               <div>
                 <p className="font-semibold">Approccio graduale</p>
-                <p className="text-sm text-gray-600">Implementazione step-by-step partendo da casi d'uso concreti</p>
+                <p className="text-sm text-gray-600">Implementazione step-by-step partendo da casi d&apos;uso concreti</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -546,7 +546,7 @@ const VisioniPresentation = () => {
               <FileText className="w-5 h-5 text-blue-600 mt-1" />
               <div>
                 <p className="font-semibold">Gestione documentale avanzata</p>
-                <p className="text-sm text-gray-600">Automazione nell'analisi e processamento di documenti, pratiche e bandi</p>
+                <p className="text-sm text-gray-600">Automazione nell&apos;analisi e processamento di documenti, pratiche e bandi</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -643,12 +643,12 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Vantaggi dell'approccio sistemico */}
+      {/* Vantaggi dell&apos;approccio sistemico */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <TrendingUp className="w-6 h-6" />
-            Vantaggi dell'approccio sistemico
+            Vantaggi dell&apos;approccio sistemico
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -656,7 +656,7 @@ const VisioniPresentation = () => {
             <div className="p-4 bg-blue-50 rounded-lg">
               <Shield className="w-6 h-6 text-blue-600 mb-2" />
               <h3 className="font-semibold">Ottimizzazione investimenti</h3>
-              <p className="text-sm text-gray-600">Condivisione dei costi e maggiore ritorno sull'investimento</p>
+              <p className="text-sm text-gray-600">Condivisione dei costi e maggiore ritorno sull&apos;investimento</p>
             </div>
             <div className="p-4 bg-green-50 rounded-lg">
               <Target className="w-6 h-6 text-green-600 mb-2" />
