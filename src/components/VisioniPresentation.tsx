@@ -19,7 +19,6 @@ import {
   Shield,
   Settings,
   LineChart,
-  PieChart as PieChartIcon,
   ArrowRight,
   Book,
   Banknote,
@@ -166,7 +165,7 @@ const VisioniPresentation = () => {
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <TrendingUp className="w-6 h-6" />
-            Benefici attesi dall'AI
+            Benefici attesi dall&apos;AI
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -273,7 +272,7 @@ const VisioniPresentation = () => {
         <CardContent>
           <div className="space-y-4">
             <p className="text-sm text-gray-600">
-              • <span className="font-semibold">Alto potenziale di adozione:</span> 87.8% delle imprese interessate all'AI nei prossimi 2 anni
+              • <span className="font-semibold">Alto potenziale di adozione:</span> 87.8% delle imprese interessate all&apos;AI nei prossimi 2 anni
             </p>
             <p className="text-sm text-gray-600">
               • <span className="font-semibold">Necessità di supporto strutturato:</span> Focus su formazione, consulenza e finanziamenti
@@ -314,13 +313,13 @@ const VisioniPresentation = () => {
               <Target className="w-5 h-5 text-blue-600 mt-1" />
               <div>
                 <p className="font-semibold">8 laboratori su 10 realizzati</p>
-                <p className="text-sm text-gray-600">Formazione pratica e hands-on sull'utilizzo dell'AI</p>
+                <p className="text-sm text-gray-600">Formazione pratica e hands-on sull'utilizzo dell&apos;AI</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <LineChart className="w-5 h-5 text-purple-600 mt-1" />
               <div>
-                <p className="font-semibold">42.71% già attivo con l'AI</p>
+                <p className="font-semibold">42.71% già attivo con l&apos;AI</p>
                 <p className="text-sm text-gray-600">31.71% in fase pilota, 11% con soluzioni operative</p>
               </div>
             </div>
@@ -419,7 +418,7 @@ const VisioniPresentation = () => {
               <Book className="w-5 h-5 text-blue-600 mt-1" />
               <div>
                 <p className="font-semibold">Formazione (52.44%)</p>
-                <p className="text-sm text-gray-600">Eventi informativi e formativi sull'AI</p>
+                <p className="text-sm text-gray-600">Eventi informativi e formativi sull&apos;AI</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
