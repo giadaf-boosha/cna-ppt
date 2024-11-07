@@ -1,10 +1,8 @@
 // src/components/VisioniPresentation.tsx
-// src/components/VisioniPresentation.tsx
 'use client'
-// src/components/VisioniPresentation.tsx
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import { 
   Brain, 
   Target, 
@@ -79,7 +77,7 @@ const VisioniPresentation = () => {
           }`}
           onClick={() => setActiveSection('results')}
         >
-          Risultati Principali
+          Risultati principali
         </button>
         <button
           className={`px-4 py-2 rounded-lg ${
@@ -89,7 +87,7 @@ const VisioniPresentation = () => {
           }`}
           onClick={() => setActiveSection('details')}
         >
-          Dettagli Assessment
+          Dettagli assessment
         </button>
         <button
           className={`px-4 py-2 rounded-lg ${
@@ -99,24 +97,24 @@ const VisioniPresentation = () => {
           }`}
           onClick={() => setActiveSection('innovation')}
         >
-          Innovazione Sistemica
+          Innovazione sistemica
         </button>
       </div>
 
-      {/* Risultati Principali Section */}
+      {/* Risultati principali Section */}
       {activeSection === 'results' && (
         <div className="space-y-8">
             {/* Header Card */}
           <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-blue-800">
-            Progetto Visioni: Analisi Approfondita
+            Progetto Visioni Interconnesse: analisi approfondita
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-3 gap-4">
             <div className="p-4 bg-blue-50 rounded-lg">
-              <div className="text-3xl font-bold text-blue-800">95</div>
+              <div className="text-3xl font-bold text-blue-800">91</div>
               <div className="text-sm text-gray-600">Assessment completati</div>
             </div>
             <div className="p-4 bg-blue-50 rounded-lg">
@@ -125,18 +123,18 @@ const VisioniPresentation = () => {
             </div>
             <div className="p-4 bg-blue-50 rounded-lg">
               <div className="text-3xl font-bold text-blue-800">87.8%</div>
-              <div className="text-sm text-gray-600">Interesse futuro AI</div>
+              <div className="text-sm text-gray-600">delle imprese prevede di esplorare o adottare soluzioni AI nei prossimi 1-2 anni</div>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {/* Stato di Adozione */}
+      {/* Stato di adozione */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <Brain className="w-6 h-6" />
-            Stato di Adozione AI
+            Stato di adozione AI
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -163,12 +161,12 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Benefici Attesi */}
+      {/* Benefici attesi */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <TrendingUp className="w-6 h-6" />
-            Benefici Attesi dall'AI
+            Benefici attesi dall'AI
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -191,7 +189,7 @@ const VisioniPresentation = () => {
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <Lightbulb className="w-6 h-6" />
-            Applicazioni AI più Richieste
+            Applicazioni AI generativa più richieste
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -209,12 +207,12 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Sfide Implementative */}
+      {/* Sfide implementative */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <AlertTriangle className="w-6 h-6" />
-            Principali Sfide
+            Principali sfide
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -232,11 +230,11 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Insights Addizionali */}
+      {/* Insights aggiuntivi */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800">
-            Insights Chiave
+            Insights chiave
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -248,12 +246,12 @@ const VisioniPresentation = () => {
             </div>
             <div className="p-4 bg-blue-50 rounded-lg">
               <Target className="w-6 h-6 text-green-600 mb-2" />
-              <h3 className="font-semibold">Supporto Finanziario</h3>
+              <h3 className="font-semibold">Supporto finanziario</h3>
               <p className="text-sm text-gray-600">46.3% interesse per bandi e finanziamenti per progetti AI</p>
             </div>
             <div className="p-4 bg-blue-50 rounded-lg">
               <Lightbulb className="w-6 h-6 text-green-600 mb-2" />
-              <h3 className="font-semibold">Cultura del Dato</h3>
+              <h3 className="font-semibold">Cultura del dato</h3>
               <p className="text-sm text-gray-600">59.8% ha una cultura del dato parzialmente sviluppata</p>
             </div>
             <div className="p-4 bg-blue-50 rounded-lg">
@@ -265,11 +263,11 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Conclusioni e Prossimi Passi */}
+      {/* Conclusioni e raccomandazioni */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800">
-            Conclusioni e Raccomandazioni
+            Conclusioni e raccomandazioni
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -292,15 +290,15 @@ const VisioniPresentation = () => {
         </div>
       )}
 
-      {/* Dettagli Assessment Section */}
+      {/* Dettagli assessment Section */}
       {activeSection === 'details' && (
         <div className="space-y-8">
-          {/* Stato Attuale */}
+          {/* Stato attuale */}
           <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <Brain className="w-6 h-6" />
-            Stato Attuale dell'Adozione AI
+            Stato attuale dell'adozione AI
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -308,14 +306,14 @@ const VisioniPresentation = () => {
             <div className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-green-600 mt-1" />
               <div>
-                <p className="font-semibold">95 Assessment completati</p>
+                <p className="font-semibold">91 assessment completati</p>
                 <p className="text-sm text-gray-600">Mappatura approfondita dello stato di digitalizzazione e AI readiness</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Target className="w-5 h-5 text-blue-600 mt-1" />
               <div>
-                <p className="font-semibold">8 Laboratori su 10 realizzati</p>
+                <p className="font-semibold">8 laboratori su 10 realizzati</p>
                 <p className="text-sm text-gray-600">Formazione pratica e hands-on sull'utilizzo dell'AI</p>
               </div>
             </div>
@@ -330,12 +328,12 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Benefici Attesi */}
+      {/* Benefici attesi */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <TrendingUp className="w-6 h-6" />
-            Benefici Attesi
+            Benefici attesi
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -343,14 +341,14 @@ const VisioniPresentation = () => {
             <div className="flex items-start gap-3">
               <Workflow className="w-5 h-5 text-blue-600 mt-1" />
               <div>
-                <p className="font-semibold">Efficienza Operativa (62.2%)</p>
+                <p className="font-semibold">Efficienza operativa (62.2%)</p>
                 <p className="text-sm text-gray-600">Aumento produttività e ottimizzazione processi</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <MessageSquare className="w-5 h-5 text-green-600 mt-1" />
               <div>
-                <p className="font-semibold">Marketing e Vendite (48.78%)</p>
+                <p className="font-semibold">Marketing e vendite (48.78%)</p>
                 <p className="text-sm text-gray-600">Potenziamento attività commerciali</p>
               </div>
             </div>
@@ -365,12 +363,12 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Sfide e Barriere */}
+      {/* Sfide e barriere */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <AlertTriangle className="w-6 h-6" />
-            Sfide e Barriere
+            Sfide e barriere
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -378,7 +376,7 @@ const VisioniPresentation = () => {
             <div className="flex items-start gap-3">
               <Book className="w-5 h-5 text-red-600 mt-1" />
               <div>
-                <p className="font-semibold">Gap di Conoscenza (55.88%)</p>
+                <p className="font-semibold">Gap di conoscenza (55.88%)</p>
                 <p className="text-sm text-gray-600">Mancanza di comprensione delle opportunità AI</p>
               </div>
             </div>
@@ -392,7 +390,7 @@ const VisioniPresentation = () => {
             <div className="flex items-start gap-3">
               <Lightbulb className="w-5 h-5 text-yellow-600 mt-1" />
               <div>
-                <p className="font-semibold">Use Cases (41.18%)</p>
+                <p className="font-semibold">Use cases (41.18%)</p>
                 <p className="text-sm text-gray-600">Difficoltà nell'identificare applicazioni rilevanti</p>
               </div>
             </div>
@@ -400,12 +398,12 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Necessità di Supporto */}
+      {/* Necessità di supporto */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <Users className="w-6 h-6" />
-            Necessità di Supporto
+            Necessità di supporto
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -413,7 +411,7 @@ const VisioniPresentation = () => {
             <div className="flex items-start gap-3">
               <Brain className="w-5 h-5 text-indigo-600 mt-1" />
               <div>
-                <p className="font-semibold">Consulenza Specialistica (71.95%)</p>
+                <p className="font-semibold">Consulenza specialistica (71.95%)</p>
                 <p className="text-sm text-gray-600">Supporto nell'identificazione e implementazione casi d'uso</p>
               </div>
             </div>
@@ -435,12 +433,12 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Prospettive Future */}
+      {/* Prospettive future */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <ArrowUpRight className="w-6 h-6" />
-            Prospettive Future
+            Prospettive future
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -448,14 +446,14 @@ const VisioniPresentation = () => {
             <div className="flex items-start gap-3">
               <TrendingUp className="w-5 h-5 text-blue-600 mt-1" />
               <div>
-                <p className="font-semibold">Alto Interesse (87.8%)</p>
+                <p className="font-semibold">Alto interesse (87.8%)</p>
                 <p className="text-sm text-gray-600">Previsione di adozione AI nei prossimi 1-2 anni</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Target className="w-5 h-5 text-purple-600 mt-1" />
               <div>
-                <p className="font-semibold">Ambizione di Base (67.07%)</p>
+                <p className="font-semibold">Ambizione di base (67.07%)</p>
                 <p className="text-sm text-gray-600">Focus su applicazioni di supporto ai processi</p>
               </div>
             </div>
@@ -483,28 +481,28 @@ const VisioniPresentation = () => {
             <div className="flex items-start gap-3">
               <Brain className="w-5 h-5 text-green-600 mt-1" />
               <div>
-                <p className="font-semibold">Formazione Strutturata</p>
+                <p className="font-semibold">Formazione strutturata</p>
                 <p className="text-sm text-gray-600">Programmi di sviluppo competenze AI personalizzati</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Workflow className="w-5 h-5 text-blue-600 mt-1" />
               <div>
-                <p className="font-semibold">Approccio Graduale</p>
+                <p className="font-semibold">Approccio graduale</p>
                 <p className="text-sm text-gray-600">Implementazione step-by-step partendo da casi d'uso concreti</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Users className="w-5 h-5 text-indigo-600 mt-1" />
               <div>
-                <p className="font-semibold">Supporto di Sistema</p>
+                <p className="font-semibold">Supporto di sistema</p>
                 <p className="text-sm text-gray-600">Coordinamento regionale per massimizzare efficacia interventi</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Banknote className="w-5 h-5 text-purple-600 mt-1" />
               <div>
-                <p className="font-semibold">Incentivi Mirati</p>
+                <p className="font-semibold">Incentivi mirati</p>
                 <p className="text-sm text-gray-600">Facilitare accesso a finanziamenti per progetti AI</p>
               </div>
             </div>
@@ -514,21 +512,20 @@ const VisioniPresentation = () => {
         </div>
       )}
 
-      {/* Innovazione Sistemica Section */}
+      {/* Innovazione sistemica Section */}
       {activeSection === 'innovation' && (
         <div className="space-y-8">
-          {/* Contesto */}
           {/* Contesto */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-blue-800 flex items-center gap-2">
             <Network className="w-8 h-8" />
-            Innovazione Sistemica CNA Emilia-Romagna
+            Innovazione sistemica CNA Emilia-Romagna
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="bg-blue-50 p-4 rounded-lg mb-6">
-            <h3 className="font-semibold text-blue-800 mb-2">Scenario Attuale:</h3>
+            <h3 className="font-semibold text-blue-800 mb-2">Scenario attuale:</h3>
             <p className="text-gray-700">
               Dalle CNA territoriali emergono richieste di soluzioni AI integrate che richiedono un approccio coordinato a livello regionale per ottimizzare investimenti e massimizzare i benefici per tutto il sistema.
             </p>
@@ -536,12 +533,12 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Esigenze Territoriali */}
+      {/* Esigenze dai territori */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <Building2 className="w-6 h-6" />
-            Esigenze dai Territori
+            Esigenze dai territori
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -549,21 +546,21 @@ const VisioniPresentation = () => {
             <div className="flex items-start gap-3">
               <FileText className="w-5 h-5 text-blue-600 mt-1" />
               <div>
-                <p className="font-semibold">Gestione Documentale Avanzata</p>
+                <p className="font-semibold">Gestione documentale avanzata</p>
                 <p className="text-sm text-gray-600">Automazione nell'analisi e processamento di documenti, pratiche e bandi</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <MessageSquare className="w-5 h-5 text-green-600 mt-1" />
               <div>
-                <p className="font-semibold">Comunicazione Integrata</p>
+                <p className="font-semibold">Comunicazione integrata</p>
                 <p className="text-sm text-gray-600">Sistema unificato per newsletter, social media e comunicazioni</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Database className="w-5 h-5 text-purple-600 mt-1" />
               <div>
-                <p className="font-semibold">Knowledge Management</p>
+                <p className="font-semibold">Knowledge management</p>
                 <p className="text-sm text-gray-600">Condivisione efficace di conoscenze e best practice tra territori</p>
               </div>
             </div>
@@ -571,12 +568,12 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Soluzioni Proposte */}
+      {/* Soluzioni integrate proposte */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <Lightbulb className="w-6 h-6" />
-            Soluzioni Integrate Proposte
+            Soluzioni integrate proposte
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -584,7 +581,7 @@ const VisioniPresentation = () => {
             <div className="p-4 bg-blue-50 rounded-lg">
               <h3 className="font-semibold flex items-center gap-2 mb-3">
                 <Settings className="w-5 h-5 text-blue-600" />
-                Sistema di Automazione Documenti
+                Sistema di automazione documenti
               </h3>
               <div className="ml-7 space-y-2">
                 <div className="flex items-center gap-2">
@@ -605,7 +602,7 @@ const VisioniPresentation = () => {
             <div className="p-4 bg-green-50 rounded-lg">
               <h3 className="font-semibold flex items-center gap-2 mb-3">
                 <Brain className="w-5 h-5 text-green-600" />
-                Hub di Intelligenza Artificiale
+                Hub di intelligenza artificiale
               </h3>
               <div className="ml-7 space-y-2">
                 <div className="flex items-center gap-2">
@@ -626,7 +623,7 @@ const VisioniPresentation = () => {
             <div className="p-4 bg-purple-50 rounded-lg">
               <h3 className="font-semibold flex items-center gap-2 mb-3">
                 <LineChart className="w-5 h-5 text-purple-600" />
-                Sistema di Analisi Predittiva
+                Sistema di analisi predittiva
               </h3>
               <div className="ml-7 space-y-2">
                 <div className="flex items-center gap-2">
@@ -647,19 +644,19 @@ const VisioniPresentation = () => {
         </CardContent>
       </Card>
 
-      {/* Vantaggi dell'Approccio Sistemico */}
+      {/* Vantaggi dell'approccio sistemico */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <TrendingUp className="w-6 h-6" />
-            Vantaggi dell'Approccio Sistemico
+            Vantaggi dell'approccio sistemico
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 gap-4">
             <div className="p-4 bg-blue-50 rounded-lg">
               <Shield className="w-6 h-6 text-blue-600 mb-2" />
-              <h3 className="font-semibold">Ottimizzazione Investimenti</h3>
+              <h3 className="font-semibold">Ottimizzazione investimenti</h3>
               <p className="text-sm text-gray-600">Condivisione dei costi e maggiore ritorno sull'investimento</p>
             </div>
             <div className="p-4 bg-green-50 rounded-lg">
@@ -669,24 +666,24 @@ const VisioniPresentation = () => {
             </div>
             <div className="p-4 bg-purple-50 rounded-lg">
               <Network className="w-6 h-6 text-purple-600 mb-2" />
-              <h3 className="font-semibold">Sinergie Territoriali</h3>
+              <h3 className="font-semibold">Sinergie territoriali</h3>
               <p className="text-sm text-gray-600">Condivisione di risorse e best practice</p>
             </div>
             <div className="p-4 bg-yellow-50 rounded-lg">
               <Users className="w-6 h-6 text-yellow-600 mb-2" />
-              <h3 className="font-semibold">Sviluppo Competenze</h3>
+              <h3 className="font-semibold">Sviluppo competenze</h3>
               <p className="text-sm text-gray-600">Formazione centralizzata e knowledge sharing</p>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {/* Roadmap Implementativa */}
+      {/* Roadmap implementativa */}
       <Card className="bg-white">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
             <PieChart className="w-6 h-6" />
-            Roadmap Implementativa
+            Roadmap implementativa
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -696,7 +693,7 @@ const VisioniPresentation = () => {
                 <span className="font-bold text-blue-800">1</span>
               </div>
               <div>
-                <p className="font-semibold">Fase Pilota (1-2 mesi)</p>
+                <p className="font-semibold">Fase pilota (1-2 mesi)</p>
                 <p className="text-sm text-gray-600">Test iniziale su territorio selezionato</p>
               </div>
             </div>
@@ -714,7 +711,7 @@ const VisioniPresentation = () => {
                 <span className="font-bold text-blue-800">3</span>
               </div>
               <div>
-                <p className="font-semibold">Roll-out Regionale (4-6 mesi)</p>
+                <p className="font-semibold">Roll-out regionale (4-6 mesi)</p>
                 <p className="text-sm text-gray-600">Implementazione progressiva su tutti i territori</p>
               </div>
             </div>
