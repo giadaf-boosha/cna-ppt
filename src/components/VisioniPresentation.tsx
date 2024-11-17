@@ -19,12 +19,12 @@ import {
   Shield,
   Settings,
   LineChart,
-  PieChart as PieChartIcon,
   ArrowRight,
   Book,
   Banknote,
   Workflow,
-  ArrowUpRight
+  ArrowUpRight,
+  PieChart as PieChartIcon
 } from 'lucide-react';
 
 const VisioniPresentation = () => {
@@ -59,10 +59,10 @@ const VisioniPresentation = () => {
 
   const implementationChallenges = [
     { name: 'Mancanza conoscenza', value: 54.84 },
-    { name: 'Identificazione casi uso', value: 46.24 },
     { name: 'Incertezza benefici', value: 45.16 },
-    { name: 'Costi implementazione', value: 20.43 },
-    { name: 'Privacy e sicurezza', value: 17.2 }
+    { name: 'Identificazione casi uso', value: 46.24 },
+    { name: 'Competenze interne', value: 36.56 },
+    { name: 'Costi implementazione', value: 20.43 }
   ];
 
   return (
@@ -257,7 +257,7 @@ const VisioniPresentation = () => {
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <Users className="w-6 h-6 text-green-600 mb-2" />
                   <h3 className="font-semibold">Competenze</h3>
-                  <p className="text-sm text-gray-600">88.16% necessita di sviluppare competenze interne specifiche</p>
+                  <p className="text-sm text-gray-600">84% necessita di sviluppare competenze interne specifiche</p>
                 </div>
               </div>
             </CardContent>
@@ -313,14 +313,14 @@ const VisioniPresentation = () => {
                 <div className="flex items-start gap-3">
                   <Target className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Laboratori realizzati</p>
-                    <p className="text-sm text-gray-600">Dati non specificati</p>
+                    <p className="font-semibold">8 laboratori su 10 realizzati</p>
+                    <p className="text-sm text-gray-600">Formazione pratica e hands-on sull'utilizzo dell'AI</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <LineChart className="w-5 h-5 text-purple-600 mt-1" />
                   <div>
-                    <p className="font-semibold">46.85% già attivo con l'AI</p>
+                    <p className="font-semibold">47.75% già attivo con l'AI</p>
                     <p className="text-sm text-gray-600">35.14% in fase pilota, 11.71% con soluzioni operative</p>
                   </div>
                 </div>
@@ -383,15 +383,15 @@ const VisioniPresentation = () => {
                 <div className="flex items-start gap-3">
                   <Target className="w-5 h-5 text-orange-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Identificazione casi d'uso (46.24%)</p>
-                    <p className="text-sm text-gray-600">Difficoltà nell'identificare applicazioni rilevanti</p>
+                    <p className="font-semibold">Incertezza ROI (45.16%)</p>
+                    <p className="text-sm text-gray-600">Difficoltà nella valutazione dei benefici concreti</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Lightbulb className="w-5 h-5 text-yellow-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Incertezza benefici (45.16%)</p>
-                    <p className="text-sm text-gray-600">Difficoltà nella valutazione dei benefici concreti</p>
+                    <p className="font-semibold">Use cases (46.24%)</p>
+                    <p className="text-sm text-gray-600">Difficoltà nell'identificare applicazioni rilevanti</p>
                   </div>
                 </div>
               </div>
@@ -418,7 +418,7 @@ const VisioniPresentation = () => {
                 <div className="flex items-start gap-3">
                   <Book className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Formazione (54.95%)</p>
+                    <p className="font-semibold">Formazione (52.25%)</p>
                     <p className="text-sm text-gray-600">Eventi informativi e formativi sull'AI</p>
                   </div>
                 </div>
@@ -682,7 +682,7 @@ const VisioniPresentation = () => {
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
-                <PieChart className="w-6 h-6" />
+                <PieChartIcon className="w-6 h-6" />
                 Roadmap implementativa
               </CardTitle>
             </CardHeader>
