@@ -118,7 +118,7 @@ const VisioniPresentation = () => {
                   <div className="text-sm text-gray-600">Assessment completati</div>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
-                  <div className="text-3xl font-bold text-blue-800">80%</div>
+                  <div className="text-3xl font-bold text-blue-800">100%</div>
                   <div className="text-sm text-gray-600">Laboratori realizzati</div>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
@@ -313,7 +313,7 @@ const VisioniPresentation = () => {
                 <div className="flex items-start gap-3">
                   <Target className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
-                    <p className="font-semibold">8 laboratori su 10 realizzati</p>
+                    <p className="font-semibold">10 laboratori su 10 realizzati</p>
                     <p className="text-sm text-gray-600">Formazione pratica e hands-on sull&apos;utilizzo dell&apos;AI</p>
                   </div>
                 </div>
