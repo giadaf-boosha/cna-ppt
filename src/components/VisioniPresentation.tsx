@@ -19,12 +19,12 @@ import {
   Shield,
   Settings,
   LineChart,
+  PieChart as PieChartIcon,
   ArrowRight,
   Book,
   Banknote,
   Workflow,
-  ArrowUpRight,
-  PieChart as PieChartIcon
+  ArrowUpRight
 } from 'lucide-react';
 
 const VisioniPresentation = () => {
@@ -34,35 +34,35 @@ const VisioniPresentation = () => {
 
   // Dati per i grafici aggiornati
   const adoptionStatus = [
-    { name: 'Non pianificata', value: 9.91 },
-    { name: 'In valutazione', value: 42.34 },
-    { name: 'Progetti pilota', value: 35.14 },
-    { name: 'Operativa', value: 11.71 },
-    { name: 'Integrata', value: 0.9 }
+    { name: 'Non pianificata', value: 10.77 },
+    { name: 'In valutazione', value: 45.38 },
+    { name: 'Progetti pilota', value: 32.31 },
+    { name: 'Operativa', value: 10.77 },
+    { name: 'Integrata', value: 0.77 }
   ];
 
   const expectedBenefits = [
-    { name: 'Produttività', value: 61.26 },
-    { name: 'Marketing', value: 48.65 },
-    { name: 'Automazione', value: 36.94 },
-    { name: 'Riduzione costi', value: 33.33 },
-    { name: 'Qualità prodotti', value: 30.63 }
+    { name: 'Produttività', value: 59.23 },
+    { name: 'Marketing', value: 49.23 },
+    { name: 'Automazione', value: 36.15 },
+    { name: 'Riduzione costi', value: 32.31 },
+    { name: 'Qualità prodotti', value: 30.77 }
   ];
 
   const aiApplications = [
-    { name: 'Gen. contenuti', value: 83.81 },
-    { name: 'Gen. immagini', value: 52.38 },
-    { name: 'Design progetti', value: 40.95 },
-    { name: 'Gen. codice', value: 29.52 },
-    { name: 'Gen. audio', value: 9.52 }
+    { name: 'Gen. contenuti', value: 83.61 },
+    { name: 'Gen. immagini', value: 52.46 },
+    { name: 'Design progetti', value: 38.52 },
+    { name: 'Gen. codice', value: 31.15 },
+    { name: 'Gen. audio', value: 9.02 }
   ];
 
   const implementationChallenges = [
-    { name: 'Mancanza conoscenza', value: 54.84 },
-    { name: 'Incertezza benefici', value: 45.16 },
-    { name: 'Identificazione casi uso', value: 46.24 },
-    { name: 'Competenze interne', value: 36.56 },
-    { name: 'Costi implementazione', value: 20.43 }
+    { name: 'Mancanza conoscenza', value: 57.27 },
+    { name: 'Identificazione casi uso', value: 49.09 },
+    { name: 'Incertezza benefici', value: 44.55 },
+    { name: 'Mancanza competenze', value: 38.18 },
+    { name: 'Costi implementazione', value: 19.09 }
   ];
 
   return (
@@ -114,15 +114,15 @@ const VisioniPresentation = () => {
             <CardContent>
               <div className="grid grid-cols-3 gap-4">
                 <div className="p-4 bg-blue-50 rounded-lg">
-                  <div className="text-3xl font-bold text-blue-800">111</div>
+                  <div className="text-3xl font-bold text-blue-800">130</div>
                   <div className="text-sm text-gray-600">Assessment completati</div>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
-                  <div className="text-3xl font-bold text-blue-800">100%</div>
+                  <div className="text-3xl font-bold text-blue-800">80%</div>
                   <div className="text-sm text-gray-600">Laboratori realizzati</div>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
-                  <div className="text-3xl font-bold text-blue-800">89.19%</div>
+                  <div className="text-3xl font-bold text-blue-800">88.46%</div>
                   <div className="text-sm text-gray-600">delle imprese prevede di esplorare o adottare soluzioni AI nei prossimi 1-2 anni</div>
                 </div>
               </div>
@@ -166,7 +166,7 @@ const VisioniPresentation = () => {
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
                 <TrendingUp className="w-6 h-6" />
-                Benefici attesi dall&apos;AI
+                Benefici attesi dall'AI
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -242,22 +242,22 @@ const VisioniPresentation = () => {
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <CheckCircle2 className="w-6 h-6 text-green-600 mb-2" />
                   <h3 className="font-semibold">Formazione</h3>
-                  <p className="text-sm text-gray-600">70.27% richiede consulenza specifica e formazione su casi d&apos;uso AI</p>
+                  <p className="text-sm text-gray-600">68.46% richiede consulenza specifica e formazione su casi d'uso AI</p>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <Target className="w-6 h-6 text-green-600 mb-2" />
                   <h3 className="font-semibold">Supporto finanziario</h3>
-                  <p className="text-sm text-gray-600">45.05% interesse per bandi e finanziamenti per progetti AI</p>
+                  <p className="text-sm text-gray-600">40.0% interesse per bandi e finanziamenti per progetti AI</p>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <Lightbulb className="w-6 h-6 text-green-600 mb-2" />
                   <h3 className="font-semibold">Cultura del dato</h3>
-                  <p className="text-sm text-gray-600">54.95% ha una cultura del dato parzialmente sviluppata</p>
+                  <p className="text-sm text-gray-600">54.62% ha una cultura del dato parzialmente sviluppata</p>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <Users className="w-6 h-6 text-green-600 mb-2" />
                   <h3 className="font-semibold">Competenze</h3>
-                  <p className="text-sm text-gray-600">84% necessita di sviluppare competenze interne specifiche</p>
+                  <p className="text-sm text-gray-600">88.92% necessita di sviluppare competenze interne specifiche</p>
                 </div>
               </div>
             </CardContent>
@@ -273,13 +273,13 @@ const VisioniPresentation = () => {
             <CardContent>
               <div className="space-y-4">
                 <p className="text-sm text-gray-600">
-                  • <span className="font-semibold">Alto potenziale di adozione:</span> 89.19% delle imprese interessate all&apos;AI nei prossimi 2 anni
+                  • <span className="font-semibold">Alto potenziale di adozione:</span> 88.46% delle imprese interessate all'AI nei prossimi 2 anni
                 </p>
                 <p className="text-sm text-gray-600">
                   • <span className="font-semibold">Necessità di supporto strutturato:</span> Focus su formazione, consulenza e finanziamenti
                 </p>
                 <p className="text-sm text-gray-600">
-                  • <span className="font-semibold">Approccio graduale:</span> Partire da casi d&apos;uso concreti e ad alto impatto
+                  • <span className="font-semibold">Approccio graduale:</span> Partire da casi d'uso concreti e ad alto impatto
                 </p>
                 <p className="text-sm text-gray-600">
                   • <span className="font-semibold">Sviluppo competenze:</span> Priorità alla creazione di know-how interno
@@ -298,7 +298,7 @@ const VisioniPresentation = () => {
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
                 <Brain className="w-6 h-6" />
-                Stato attuale dell&apos;adozione AI
+                Stato attuale dell'adozione AI
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -306,22 +306,22 @@ const VisioniPresentation = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-green-600 mt-1" />
                   <div>
-                    <p className="font-semibold">111 assessment completati</p>
+                    <p className="font-semibold">130 assessment completati</p>
                     <p className="text-sm text-gray-600">Mappatura approfondita dello stato di digitalizzazione e AI readiness</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Target className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
-                    <p className="font-semibold">10 laboratori su 10 realizzati</p>
-                    <p className="text-sm text-gray-600">Formazione pratica e hands-on sull&apos;utilizzo dell&apos;AI</p>
+                    <p className="font-semibold">Laboratori realizzati</p>
+                    <p className="text-sm text-gray-600">Dati non specificati</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <LineChart className="w-5 h-5 text-purple-600 mt-1" />
                   <div>
-                    <p className="font-semibold">47.75% già attivo con l&apos;AI</p>
-                    <p className="text-sm text-gray-600">35.14% in fase pilota, 11.71% con soluzioni operative</p>
+                    <p className="font-semibold">43.85% già attivo con l'AI</p>
+                    <p className="text-sm text-gray-600">32.31% in fase pilota, 10.77% con soluzioni operative, 0.77% integrata</p>
                   </div>
                 </div>
               </div>
@@ -341,21 +341,21 @@ const VisioniPresentation = () => {
                 <div className="flex items-start gap-3">
                   <Workflow className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Efficienza operativa (61.26%)</p>
+                    <p className="font-semibold">Efficienza operativa (59.23%)</p>
                     <p className="text-sm text-gray-600">Aumento produttività e ottimizzazione processi</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <MessageSquare className="w-5 h-5 text-green-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Marketing e vendite (48.65%)</p>
+                    <p className="font-semibold">Marketing e vendite (49.23%)</p>
                     <p className="text-sm text-gray-600">Potenziamento attività commerciali</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <ArrowUpRight className="w-5 h-5 text-purple-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Automazione (36.94%)</p>
+                    <p className="font-semibold">Automazione (36.15%)</p>
                     <p className="text-sm text-gray-600">Riduzione attività ripetitive</p>
                   </div>
                 </div>
@@ -376,22 +376,22 @@ const VisioniPresentation = () => {
                 <div className="flex items-start gap-3">
                   <Book className="w-5 h-5 text-red-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Gap di conoscenza (54.84%)</p>
+                    <p className="font-semibold">Gap di conoscenza (57.27%)</p>
                     <p className="text-sm text-gray-600">Mancanza di comprensione delle opportunità AI</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Target className="w-5 h-5 text-orange-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Incertezza ROI (45.16%)</p>
-                    <p className="text-sm text-gray-600">Difficoltà nella valutazione dei benefici concreti</p>
+                    <p className="font-semibold">Identificazione casi d'uso (49.09%)</p>
+                    <p className="text-sm text-gray-600">Difficoltà nell'identificare applicazioni rilevanti</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Lightbulb className="w-5 h-5 text-yellow-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Use cases (46.24%)</p>
-                    <p className="text-sm text-gray-600">Difficoltà nell&apos;identificare applicazioni rilevanti</p>
+                    <p className="font-semibold">Incertezza benefici (44.55%)</p>
+                    <p className="text-sm text-gray-600">Difficoltà nella valutazione dei benefici concreti</p>
                   </div>
                 </div>
               </div>
@@ -411,22 +411,22 @@ const VisioniPresentation = () => {
                 <div className="flex items-start gap-3">
                   <Brain className="w-5 h-5 text-indigo-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Consulenza specialistica (70.27%)</p>
-                    <p className="text-sm text-gray-600">Supporto nell&apos;identificazione e implementazione casi d&apos;uso</p>
+                    <p className="font-semibold">Consulenza specialistica (68.46%)</p>
+                    <p className="text-sm text-gray-600">Supporto nell'identificazione e implementazione casi d'uso</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Book className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Formazione (52.25%)</p>
-                    <p className="text-sm text-gray-600">Eventi informativi e formativi sull&apos;AI</p>
+                    <p className="font-semibold">Formazione (56.15%)</p>
+                    <p className="text-sm text-gray-600">Eventi informativi e formativi sull'AI</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Banknote className="w-5 h-5 text-green-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Finanziamenti (45.05%)</p>
-                    <p className="text-sm text-gray-600">Supporto nell&apos;accesso a bandi e incentivi</p>
+                    <p className="font-semibold">Finanziamenti (40.0%)</p>
+                    <p className="text-sm text-gray-600">Supporto nell'accesso a bandi e incentivi</p>
                   </div>
                 </div>
               </div>
@@ -446,21 +446,21 @@ const VisioniPresentation = () => {
                 <div className="flex items-start gap-3">
                   <TrendingUp className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Alto interesse (89.19%)</p>
+                    <p className="font-semibold">Alto interesse (88.46%)</p>
                     <p className="text-sm text-gray-600">Previsione di adozione AI nei prossimi 1-2 anni</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Target className="w-5 h-5 text-purple-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Ambizione di base (67.57%)</p>
+                    <p className="font-semibold">Ambizione di base (67.69%)</p>
                     <p className="text-sm text-gray-600">Focus su applicazioni di supporto ai processi</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Lightbulb className="w-5 h-5 text-yellow-600 mt-1" />
                   <div>
-                    <p className="font-semibold">Innovazione (24.33%)</p>
+                    <p className="font-semibold">Innovazione (26.15%)</p>
                     <p className="text-sm text-gray-600">Aspirazione a leadership e innovazione tramite AI</p>
                   </div>
                 </div>
@@ -489,7 +489,7 @@ const VisioniPresentation = () => {
                   <Workflow className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
                     <p className="font-semibold">Approccio graduale</p>
-                    <p className="text-sm text-gray-600">Implementazione step-by-step partendo da casi d&apos;uso concreti</p>
+                    <p className="text-sm text-gray-600">Implementazione step-by-step partendo da casi d'uso concreti</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -547,7 +547,7 @@ const VisioniPresentation = () => {
                   <FileText className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
                     <p className="font-semibold">Gestione documentale avanzata</p>
-                    <p className="text-sm text-gray-600">Automazione nell&apos;analisi e processamento di documenti, pratiche e bandi</p>
+                    <p className="text-sm text-gray-600">Automazione nell'analisi e processamento di documenti, pratiche e bandi</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -649,7 +649,7 @@ const VisioniPresentation = () => {
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
                 <TrendingUp className="w-6 h-6" />
-                Vantaggi dell&apos;approccio sistemico
+                Vantaggi dell'approccio sistemico
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -657,7 +657,7 @@ const VisioniPresentation = () => {
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <Shield className="w-6 h-6 text-blue-600 mb-2" />
                   <h3 className="font-semibold">Ottimizzazione investimenti</h3>
-                  <p className="text-sm text-gray-600">Condivisione dei costi e maggiore ritorno sull&apos;investimento</p>
+                  <p className="text-sm text-gray-600">Condivisione dei costi e maggiore ritorno sull'investimento</p>
                 </div>
                 <div className="p-4 bg-green-50 rounded-lg">
                   <Target className="w-6 h-6 text-green-600 mb-2" />
@@ -682,7 +682,7 @@ const VisioniPresentation = () => {
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
-                <PieChartIcon className="w-6 h-6" />
+                <PieChart className="w-6 h-6" />
                 Roadmap implementativa
               </CardTitle>
             </CardHeader>
