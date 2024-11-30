@@ -547,7 +547,7 @@ const VisioniPresentation = () => {
                   <FileText className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
                     <p className="font-semibold">Gestione documentale avanzata</p>
-                    <p className="text-sm text-gray-600">Automazione nell'analisi e processamento di documenti, pratiche e bandi</p>
+                    <p className="text-sm text-gray-600">Automazione nell&apos;analisi e processamento di documenti, pratiche e bandi</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -649,7 +649,7 @@ const VisioniPresentation = () => {
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
                 <TrendingUp className="w-6 h-6" />
-                Vantaggi dell'approccio sistemico
+                Vantaggi dell&apos;approccio sistemico
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -657,7 +657,7 @@ const VisioniPresentation = () => {
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <Shield className="w-6 h-6 text-blue-600 mb-2" />
                   <h3 className="font-semibold">Ottimizzazione investimenti</h3>
-                  <p className="text-sm text-gray-600">Condivisione dei costi e maggiore ritorno sull'investimento</p>
+                  <p className="text-sm text-gray-600">Condivisione dei costi e maggiore ritorno sull&apos;investimento</p>
                 </div>
                 <div className="p-4 bg-green-50 rounded-lg">
                   <Target className="w-6 h-6 text-green-600 mb-2" />
