@@ -118,7 +118,7 @@ const VisioniPresentation = () => {
                   <div className="text-sm text-gray-600">Assessment completati</div>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
-                  <div className="text-3xl font-bold text-blue-800">80%</div>
+                  <div className="text-3xl font-bold text-blue-800">100%</div>
                   <div className="text-sm text-gray-600">Laboratori realizzati</div>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
