@@ -24,8 +24,8 @@ import {
   Banknote,
   Workflow,
   ArrowUpRight,
-  PieChart as PieChartIcon,
-  MapPin
+  MapPin,
+  Briefcase // Import corretto dell'icona Briefcase
 } from 'lucide-react';
 
 const VisioniPresentation = () => {
@@ -214,7 +214,7 @@ const VisioniPresentation = () => {
               </div>
               {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
-                I settori principali in cui operano le aziende sono la Metalmeccanica (21.54%, 28 aziende) e l&apos;Informatica/Consulenza (21.54%, 28 aziende). Seguono il settore "Altro" specificato (19.23%, 25 aziende), Costruzioni/Impiantistica (14.62%, 19 aziende) e Commercio (10.77%, 14 aziende).
+                I settori principali in cui operano le aziende sono la Metalmeccanica (21.54%, 28 aziende) e l&apos;Informatica/Consulenza (21.54%, 28 aziende). Seguono il settore &quot;Altro&quot; specificato (19.23%, 25 aziende), Costruzioni/Impiantistica (14.62%, 19 aziende) e Commercio (10.77%, 14 aziende).
               </p>
             </CardContent>
           </Card>
@@ -396,7 +396,7 @@ const VisioniPresentation = () => {
         </div>
       )}
 
-    
+      
       {/* Dettagli assessment Section */}
       {activeSection === 'details' && (
         <div className="space-y-8">
