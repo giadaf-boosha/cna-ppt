@@ -24,13 +24,14 @@ import {
   Banknote,
   Workflow,
   ArrowUpRight,
-  PieChart as PieChartIcon
+  PieChart as PieChartIcon,
+  MapPin // Import dell'icona per il nuovo grafico
 } from 'lucide-react';
 
 const VisioniPresentation = () => {
   const [activeSection, setActiveSection] = useState('results'); // results, details, innovation
 
-  const COLORS = ['#2563EB', '#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE'];
+  const COLORS = ['#2563EB', '#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE', '#A5B4FC', '#6366F1', '#4F46E5', '#4338CA', '#3730A3'];
 
   // Dati per i grafici aggiornati
   const adoptionStatus = [
@@ -63,6 +64,19 @@ const VisioniPresentation = () => {
     { name: 'Incertezza benefici', value: 44.55 },
     { name: 'Mancanza competenze', value: 38.18 },
     { name: 'Costi implementazione', value: 19.09 }
+  ];
+
+  const assessmentDistribution = [
+    { name: 'Bologna', value: 13 },
+    { name: 'Ferrara', value: 0 },
+    { name: 'Forlì-Cesena', value: 15 },
+    { name: 'Imola', value: 10 },
+    { name: 'Modena', value: 12 },
+    { name: 'Parma', value: 10 },
+    { name: 'Piacenza', value: 11 },
+    { name: 'Ravenna', value: 35 },
+    { name: 'Reggio Emilia', value: 11 },
+    { name: 'Rimini', value: 13 }
   ];
 
   return (
@@ -129,6 +143,33 @@ const VisioniPresentation = () => {
             </CardContent>
           </Card>
 
+          {/* Distribuzione Assessment nei Territori */}
+          <Card className="bg-white">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
+                <MapPin className="w-6 h-6" />
+                Distribuzione degli assessment nei territori
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={assessmentDistribution}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="value" fill="#3B82F6" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              {/* Commento sotto il grafico */}
+              <p className="mt-4 text-sm text-gray-600">
+                La maggior parte degli assessment è stata condotta nel territorio di Ravenna (26.92%, 35 aziende). Seguono Forlì-Cesena (11.54%, 15 aziende), Bologna e Rimini (entrambi 10%, 13 aziende ciascuno), Modena (9.23%, 12 aziende), Piacenza e Reggio Emilia (entrambi 8.46%, 11 aziende ciascuno), Imola e Parma (entrambi 7.69%, 10 aziende ciascuno), e infine Ferrara con nessun assessment condotto.
+              </p>
+            </CardContent>
+          </Card>
+
           {/* Stato di adozione */}
           <Card className="bg-white">
             <CardHeader>
@@ -160,7 +201,7 @@ const VisioniPresentation = () => {
               </div>
               {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
-                Secondo i dati raccolti, il 10.77% delle aziende non ha piani per adottare soluzioni di IA, mentre il 45.38% sta valutando possibili applicazioni. Inoltre, il 32.31% è in fase di sperimentazione o progetti pilota, il 10.77% ha già applicazioni operative in specifiche aree aziendali e solo lo 0.77% utilizza l'IA in modo diffuso e integrato nei processi aziendali.
+                Secondo i dati raccolti, il 10.77% delle aziende non ha piani per adottare soluzioni di IA, mentre il 45.38% sta valutando possibili applicazioni. Inoltre, il 32.31% è in fase di sperimentazione o progetti pilota, il 10.77% ha già applicazioni operative in specifiche aree aziendali e solo lo 0.77% utilizza l&apos;IA in modo diffuso e integrato nei processi aziendali.
               </p>
             </CardContent>
           </Card>
@@ -187,7 +228,7 @@ const VisioniPresentation = () => {
               </div>
               {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
-                I principali benefici attesi dall'adozione dell'IA sono l'aumento di produttività ed efficienza dei processi (59.23%), il potenziamento delle attività di marketing e vendita (49.23%), l'automazione di attività ripetitive e a basso valore aggiunto (36.15%), la riduzione dei costi operativi (32.31%) e il miglioramento della qualità di prodotti e servizi (30.77%).
+                I principali benefici attesi dall&apos;adozione dell&apos;IA sono l&apos;aumento di produttività ed efficienza dei processi (59.23%), il potenziamento delle attività di marketing e vendita (49.23%), l&apos;automazione di attività ripetitive e a basso valore aggiunto (36.15%), la riduzione dei costi operativi (32.31%) e il miglioramento della qualità di prodotti e servizi (30.77%).
               </p>
             </CardContent>
           </Card>
@@ -214,7 +255,7 @@ const VisioniPresentation = () => {
               </div>
               {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
-                Le aree di maggiore interesse per l'utilizzo dell'IA generativa sono la generazione di testi e contenuti (83.61%), la generazione di immagini e video (52.46%), la generazione di design e progetti (38.52%), la generazione di codice e software (31.15%) e la generazione di audio e musica (9.02%).
+                Le aree di maggiore interesse per l&apos;utilizzo dell&apos;IA generativa sono la generazione di testi e contenuti (83.61%), la generazione di immagini e video (52.46%), la generazione di design e progetti (38.52%), la generazione di codice e software (31.15%) e la generazione di audio e musica (9.02%).
               </p>
             </CardContent>
           </Card>
@@ -241,7 +282,7 @@ const VisioniPresentation = () => {
               </div>
               {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
-                Le principali sfide nell'adozione dell'IA sono la mancanza di conoscenza e comprensione delle opportunità offerte dall'IA (57.27%), la difficoltà nell'identificare i casi d'uso e le applicazioni più rilevanti (49.09%), l'incertezza sui benefici concreti dell'IA per il business (44.55%), la mancanza di competenze interne per valutare e implementare soluzioni IA (38.18%) e le preoccupazioni sui costi e sui tempi di implementazione (19.09%).
+                Le principali sfide nell&apos;adozione dell&apos;IA sono la mancanza di conoscenza e comprensione delle opportunità offerte dall&apos;IA (57.27%), la difficoltà nell&apos;identificare i casi d&apos;uso e le applicazioni più rilevanti (49.09%), l&apos;incertezza sui benefici concreti dell&apos;IA per il business (44.55%), la mancanza di competenze interne per valutare e implementare soluzioni IA (38.18%) e le preoccupazioni sui costi e sui tempi di implementazione (19.09%).
               </p>
             </CardContent>
           </Card>
