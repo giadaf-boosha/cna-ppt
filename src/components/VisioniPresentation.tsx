@@ -24,7 +24,8 @@ import {
   Banknote,
   Workflow,
   ArrowUpRight,
-  MapPin // Import dell'icona per il nuovo grafico
+  PieChart as PieChartIcon,
+  MapPin
 } from 'lucide-react';
 
 const VisioniPresentation = () => {
@@ -65,17 +66,39 @@ const VisioniPresentation = () => {
     { name: 'Costi implementazione', value: 19.09 }
   ];
 
+  // Distribuzione degli assessment nei territori, ordinati in modo decrescente
   const assessmentDistribution = [
-    { name: 'Bologna', value: 13 },
-    { name: 'Ferrara', value: 0 },
-    { name: 'Forlì-Cesena', value: 15 },
-    { name: 'Imola', value: 10 },
-    { name: 'Modena', value: 12 },
-    { name: 'Parma', value: 10 },
-    { name: 'Piacenza', value: 11 },
     { name: 'Ravenna', value: 35 },
+    { name: 'Forlì-Cesena', value: 15 },
+    { name: 'Bologna', value: 13 },
+    { name: 'Rimini', value: 13 },
+    { name: 'Modena', value: 12 },
+    { name: 'Piacenza', value: 11 },
     { name: 'Reggio Emilia', value: 11 },
-    { name: 'Rimini', value: 13 }
+    { name: 'Imola', value: 10 },
+    { name: 'Parma', value: 10 },
+    { name: 'Ferrara', value: 0 }
+  ];
+
+  // Dati per i settori in cui operano le aziende, ordinati in modo decrescente
+  const companySectors = [
+    { name: 'Metalmeccanica', value: 28 },
+    { name: 'Informatica/Consulenza', value: 28 },
+    { name: 'Altro', value: 25 },
+    { name: 'Costruzioni/Impiantistica', value: 19 },
+    { name: 'Commercio', value: 14 },
+    { name: 'Tessile/Abbigliamento/Calzature', value: 9 },
+    { name: 'Macchine elettriche/elettroniche', value: 8 },
+    { name: 'Alimentare', value: 7 },
+    { name: 'Legno e mobili', value: 5 },
+    { name: 'Materie plastiche', value: 5 },
+    { name: 'Automotive', value: 5 },
+    { name: 'Trasporti/Logistica', value: 5 },
+    { name: 'Carta/Stampa/Editoria', value: 4 },
+    { name: 'Nautico', value: 2 },
+    { name: 'Vetro/Ceramica/Pietra', value: 2 },
+    { name: 'Turismo/Ristorazione', value: 2 },
+    { name: 'Aerospaziale', value: 1 }
   ];
 
   return (
@@ -164,7 +187,34 @@ const VisioniPresentation = () => {
               </div>
               {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
-                La maggior parte degli assessment è stata condotta nel territorio di Ravenna (26.92%, 35 aziende). Seguono Forlì-Cesena (11.54%, 15 aziende), Bologna e Rimini (entrambi 10%, 13 aziende ciascuno), Modena (9.23%, 12 aziende), Piacenza e Reggio Emilia (entrambi 8.46%, 11 aziende ciascuno), Imola e Parma (entrambi 7.69%, 10 aziende ciascuno), e infine Ferrara con nessun assessment condotto.
+                La maggior parte degli assessment è stata condotta nel territorio di Ravenna (26.92%, 35 aziende). Seguono Forlì-Cesena (11.54%, 15 aziende), Bologna e Rimini (entrambi 10%, 13 aziende ciascuno), Modena (9.23%, 12 aziende), Piacenza e Reggio Emilia (entrambi 8.46%, 11 aziende ciascuno), Imola e Parma (entrambi 7.69%, 10 aziende ciascuno), e Ferrara con nessun assessment condotto.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Principali settori di attività */}
+          <Card className="bg-white">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
+                <Briefcase className="w-6 h-6" />
+                Settori in cui operano le aziende
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={companySectors} layout="vertical">
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis type="number" />
+                    <YAxis dataKey="name" type="category" />
+                    <Tooltip />
+                    <Bar dataKey="value" fill="#3B82F6" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              {/* Commento sotto il grafico */}
+              <p className="mt-4 text-sm text-gray-600">
+                I settori principali in cui operano le aziende sono la Metalmeccanica (21.54%, 28 aziende) e l&apos;Informatica/Consulenza (21.54%, 28 aziende). Seguono il settore "Altro" specificato (19.23%, 25 aziende), Costruzioni/Impiantistica (14.62%, 19 aziende) e Commercio (10.77%, 14 aziende).
               </p>
             </CardContent>
           </Card>
