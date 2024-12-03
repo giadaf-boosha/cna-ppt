@@ -24,7 +24,6 @@ import {
   Banknote,
   Workflow,
   ArrowUpRight,
-  PieChart as PieChartIcon,
   MapPin // Import dell'icona per il nuovo grafico
 } from 'lucide-react';
 
