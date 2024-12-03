@@ -19,12 +19,12 @@ import {
   Shield,
   Settings,
   LineChart,
-  // Removed unused import PieChartIcon
   ArrowRight,
   Book,
   Banknote,
   Workflow,
-  ArrowUpRight
+  ArrowUpRight,
+  PieChart as PieChartIcon
 } from 'lucide-react';
 
 const VisioniPresentation = () => {
@@ -158,6 +158,10 @@ const VisioniPresentation = () => {
                   </PieChart>
                 </ResponsiveContainer>
               </div>
+              {/* Commento sotto il grafico */}
+              <p className="mt-4 text-sm text-gray-600">
+                Secondo i dati raccolti, il 10.77% delle aziende non ha piani per adottare soluzioni di IA, mentre il 45.38% sta valutando possibili applicazioni. Inoltre, il 32.31% è in fase di sperimentazione o progetti pilota, il 10.77% ha già applicazioni operative in specifiche aree aziendali e solo lo 0.77% utilizza l'IA in modo diffuso e integrato nei processi aziendali.
+              </p>
             </CardContent>
           </Card>
 
@@ -181,6 +185,10 @@ const VisioniPresentation = () => {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
+              {/* Commento sotto il grafico */}
+              <p className="mt-4 text-sm text-gray-600">
+                I principali benefici attesi dall'adozione dell'IA sono l'aumento di produttività ed efficienza dei processi (59.23%), il potenziamento delle attività di marketing e vendita (49.23%), l'automazione di attività ripetitive e a basso valore aggiunto (36.15%), la riduzione dei costi operativi (32.31%) e il miglioramento della qualità di prodotti e servizi (30.77%).
+              </p>
             </CardContent>
           </Card>
 
@@ -204,6 +212,10 @@ const VisioniPresentation = () => {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
+              {/* Commento sotto il grafico */}
+              <p className="mt-4 text-sm text-gray-600">
+                Le aree di maggiore interesse per l'utilizzo dell'IA generativa sono la generazione di testi e contenuti (83.61%), la generazione di immagini e video (52.46%), la generazione di design e progetti (38.52%), la generazione di codice e software (31.15%) e la generazione di audio e musica (9.02%).
+              </p>
             </CardContent>
           </Card>
 
@@ -227,6 +239,10 @@ const VisioniPresentation = () => {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
+              {/* Commento sotto il grafico */}
+              <p className="mt-4 text-sm text-gray-600">
+                Le principali sfide nell'adozione dell'IA sono la mancanza di conoscenza e comprensione delle opportunità offerte dall'IA (57.27%), la difficoltà nell'identificare i casi d'uso e le applicazioni più rilevanti (49.09%), l'incertezza sui benefici concreti dell'IA per il business (44.55%), la mancanza di competenze interne per valutare e implementare soluzioni IA (38.18%) e le preoccupazioni sui costi e sui tempi di implementazione (19.09%).
+              </p>
             </CardContent>
           </Card>
 
@@ -290,6 +306,7 @@ const VisioniPresentation = () => {
         </div>
       )}
 
+    
       {/* Dettagli assessment Section */}
       {activeSection === 'details' && (
         <div className="space-y-8">
