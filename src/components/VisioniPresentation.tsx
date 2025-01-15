@@ -2,43 +2,46 @@
 'use client'
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { 
-  BarChart, 
-  Bar, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  PieChart, 
-  Pie, 
-  Cell, 
-  ResponsiveContainer 
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer
 } from 'recharts';
-import { 
-  Brain, 
-  Target, 
-  Users, 
-  Lightbulb, 
-  TrendingUp, 
-  CheckCircle2, 
+import {
+  Brain,
+  Target,
+  Users,
+  Lightbulb,
+  TrendingUp,
+  CheckCircle2,
   AlertTriangle,
   LineChart,
   ArrowUpRight,
   MapPin,
-  Briefcase
+  Briefcase,
+  MessageSquare,
+  Book,
+  Sliders // <-- Sostituto di Workflow
 } from 'lucide-react';
 
 const VisioniPresentation = () => {
-  const [activeSection, setActiveSection] = useState<'results' | 'details'>('results'); 
-  // RIMOSSO "innovation"
+  // Abbiamo 2 sezioni: "results" e "details"
+  const [activeSection, setActiveSection] = useState<'results' | 'details'>('results');
 
-  // Palette di colori per le torte
+  // Palette di colori per i grafici a torta
   const COLORS = [
-    '#2563EB', '#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE', 
+    '#2563EB', '#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE',
     '#A5B4FC', '#6366F1', '#4F46E5', '#4338CA', '#3730A3'
   ];
 
-  // Nuova distribuzione degli assessment nei territori (Q1)
+  // Esempio di dati per la sezione "Risultati principali"
   const assessmentDistribution = [
     { name: 'Ravenna', value: 35 },
     { name: 'Forlì-Cesena', value: 15 },
@@ -52,7 +55,6 @@ const VisioniPresentation = () => {
     { name: 'Ferrara', value: 10 }
   ];
 
-  // Principali settori di attività (Q14)
   const companySectors = [
     { name: 'Metalmeccanica', value: 31 },
     { name: 'Informatica/Consulenza', value: 29 },
@@ -73,7 +75,6 @@ const VisioniPresentation = () => {
     { name: 'Aerospaziale', value: 1 }
   ];
 
-  // Stato di adozione dell’IA (Q159)
   const adoptionStatus = [
     { name: 'Non pianificata', value: 10.64 },
     { name: 'In valutazione', value: 45.39 },
@@ -82,7 +83,6 @@ const VisioniPresentation = () => {
     { name: 'Integrata', value: 0.71 }
   ];
 
-  // Principali benefici attesi (Q173)
   const expectedBenefits = [
     { name: 'Produttività', value: 58.87 },
     { name: 'Marketing', value: 48.23 },
@@ -91,7 +91,6 @@ const VisioniPresentation = () => {
     { name: 'Riduzione costi', value: 29.79 }
   ];
 
-  // Aree di interesse per IA generativa (Q194)
   const aiApplications = [
     { name: 'Gen. contenuti', value: 80.45 },
     { name: 'Gen. immagini', value: 53.38 },
@@ -100,7 +99,6 @@ const VisioniPresentation = () => {
     { name: 'Gen. audio', value: 9.02 }
   ];
 
-  // Principali sfide implementative (Q168)
   const implementationChallenges = [
     { name: 'Mancanza conoscenza', value: 57.76 },
     { name: 'Identificazione casi uso', value: 48.28 },
@@ -115,8 +113,8 @@ const VisioniPresentation = () => {
       <div className="flex gap-4 mb-8">
         <button
           className={`px-4 py-2 rounded-lg ${
-            activeSection === 'results' 
-              ? 'bg-blue-600 text-white' 
+            activeSection === 'results'
+              ? 'bg-blue-600 text-white'
               : 'bg-gray-100 hover:bg-gray-200'
           }`}
           onClick={() => setActiveSection('results')}
@@ -125,18 +123,17 @@ const VisioniPresentation = () => {
         </button>
         <button
           className={`px-4 py-2 rounded-lg ${
-            activeSection === 'details' 
-              ? 'bg-blue-600 text-white' 
+            activeSection === 'details'
+              ? 'bg-blue-600 text-white'
               : 'bg-gray-100 hover:bg-gray-200'
           }`}
           onClick={() => setActiveSection('details')}
         >
           Dettagli assessment
         </button>
-        {/* SEZIONE "INNOVAZIONE SISTEMICA" RIMOSSA */}
       </div>
 
-      {/* RISULTATI PRINCIPALI */}
+      {/* SEZIONE "RISULTATI PRINCIPALI" */}
       {activeSection === 'results' && (
         <div className="space-y-8">
           {/* Header Card */}
@@ -149,26 +146,21 @@ const VisioniPresentation = () => {
             <CardContent>
               <div className="grid grid-cols-3 gap-4">
                 <div className="p-4 bg-blue-50 rounded-lg">
-                  {/* Numero di questionari completati (nuovo totale: 141) */}
                   <div className="text-3xl font-bold text-blue-800">141</div>
                   <div className="text-sm text-gray-600">
                     Questionari completati
                   </div>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
-                  {/* Dato ipotetico: manteniamo se esistono 100% laboratori realizzati, 
-                      altrimenti va adeguato secondo necessità */}
                   <div className="text-3xl font-bold text-blue-800">100%</div>
                   <div className="text-sm text-gray-600">
                     Laboratori realizzati
                   </div>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
-                  {/* Probabilità di adozione IA nei prossimi 1-2 anni (Q172): 
-                      somma di Abbastanza (39.72%) + Molto (26.24%) + Estremamente (21.99%) ~ 87.95% */}
                   <div className="text-3xl font-bold text-blue-800">~88%</div>
                   <div className="text-sm text-gray-600">
-                    delle imprese prevede di esplorare o adottare soluzioni AI 
+                    delle imprese prevede di esplorare o adottare soluzioni AI
                     nei prossimi 1-2 anni
                   </div>
                 </div>
@@ -196,7 +188,6 @@ const VisioniPresentation = () => {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-              {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
                 La rilevazione coinvolge principalmente Ravenna (24,82%, 35 aziende),
                 seguita da Forlì-Cesena (10,64%, 15), Bologna (9,22%, 13), Rimini (9,93%, 14),
@@ -226,13 +217,13 @@ const VisioniPresentation = () => {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-              {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
                 Il questionario evidenzia una concentrazione prevalente nei
                 settori Metalmeccanica (21,99%, 31 aziende),
                 Informatica/Consulenza (20,57%, 29) e <em>Altro</em> (19,86%, 28),
                 seguiti da Costruzioni/Impiantistica (13,48%, 19) e Commercio
-                (10,64%, 15). Gli altri settori mostrano numeri inferiori ma comunque significativi.
+                (10,64%, 15). Gli altri settori mostrano numeri inferiori
+                ma comunque significativi.
               </p>
             </CardContent>
           </Card>
@@ -259,19 +250,22 @@ const VisioniPresentation = () => {
                       label={({ name, value }) => `${name}: ${value}%`}
                     >
                       {adoptionStatus.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={COLORS[index % COLORS.length]}
+                        />
                       ))}
                     </Pie>
                     <Tooltip />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
-              {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
-                Circa il 10,64% delle aziende non ha alcun piano di adozione, mentre il 45,39% 
-                sta valutando possibili applicazioni. Il 30,50% è in fase pilota, il 12,77% 
-                ha già applicazioni operative e solo lo 0,71% utilizza l’IA in modo 
-                diffuso e integrato.
+                Circa il 10,64% delle aziende non ha alcun piano di adozione,
+                mentre il 45,39% sta valutando possibili applicazioni.
+                Il 30,50% è in fase pilota, il 12,77% ha già applicazioni
+                operative e solo lo 0,71% utilizza l’IA in modo diffuso
+                e integrato.
               </p>
             </CardContent>
           </Card>
@@ -296,12 +290,12 @@ const VisioniPresentation = () => {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-              {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
-                L&apos;aumento di produttività ed efficienza (58,87%) e il potenziamento 
-                di marketing e vendite (48,23%) sono in cima alle aspettative. Seguono 
-                l’automazione delle attività ripetitive (34,75%), il miglioramento della 
-                qualità di prodotti e servizi (31,21%) e la riduzione dei costi operativi (29,79%).
+                L&apos;aumento di produttività ed efficienza (58,87%)
+                e il potenziamento di marketing e vendite (48,23%)
+                sono in cima alle aspettative. Seguono l’automazione
+                (34,75%), il miglioramento della qualità di prodotti
+                (31,21%) e la riduzione dei costi operativi (29,79%).
               </p>
             </CardContent>
           </Card>
@@ -326,12 +320,11 @@ const VisioniPresentation = () => {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-              {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
-                Le principali aree di interesse includono la generazione di testi 
-                (80,45%), la creazione di immagini e video (53,38%), la progettazione 
-                (37,59%), la generazione di codice (29,32%) e in misura minore la 
-                generazione di contenuti audio (9,02%).
+                Le principali aree di interesse includono la generazione
+                di testi (80,45%), la creazione di immagini e video (53,38%),
+                la progettazione (37,59%), la generazione di codice (29,32%)
+                e in misura minore la generazione di contenuti audio (9,02%).
               </p>
             </CardContent>
           </Card>
@@ -356,12 +349,12 @@ const VisioniPresentation = () => {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-              {/* Commento sotto il grafico */}
               <p className="mt-4 text-sm text-gray-600">
-                La mancanza di conoscenza sulle opportunità (57,76%) e la difficoltà 
-                nell’identificare i casi d’uso (48,28%) rappresentano le maggiori sfide. 
-                Seguono l’incertezza sui benefici (43,97%), l’assenza di competenze interne 
-                adeguate (40,52%) e le preoccupazioni sui costi d’implementazione (18,97%).
+                La mancanza di conoscenza sulle opportunità (57,76%)
+                e la difficoltà nell’identificare i casi d’uso (48,28%)
+                rappresentano le maggiori sfide. Seguono l’incertezza sui
+                benefici (43,97%), l’assenza di competenze interne adeguate
+                (40,52%) e le preoccupazioni sui costi d’implementazione (18,97%).
               </p>
             </CardContent>
           </Card>
@@ -375,7 +368,6 @@ const VisioniPresentation = () => {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-4">
-                {/* Formazione */}
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <CheckCircle2 className="w-6 h-6 text-green-600 mb-2" />
                   <h3 className="font-semibold">Formazione</h3>
@@ -383,7 +375,6 @@ const VisioniPresentation = () => {
                     68,79% richiede consulenza specifica e formazione su casi d&apos;uso AI
                   </p>
                 </div>
-                {/* Supporto finanziario */}
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <Target className="w-6 h-6 text-green-600 mb-2" />
                   <h3 className="font-semibold">Supporto finanziario</h3>
@@ -391,20 +382,19 @@ const VisioniPresentation = () => {
                     39,01% manifesta interesse per bandi e finanziamenti
                   </p>
                 </div>
-                {/* Cultura del dato */}
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <Lightbulb className="w-6 h-6 text-green-600 mb-2" />
                   <h3 className="font-semibold">Cultura del dato</h3>
                   <p className="text-sm text-gray-600">
-                    54,61% dichiara di avere una cultura del dato solo parzialmente sviluppata
+                    54,61% dichiara di avere una cultura del dato
+                    solo parzialmente sviluppata
                   </p>
                 </div>
-                {/* Competenze */}
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <Users className="w-6 h-6 text-green-600 mb-2" />
                   <h3 className="font-semibold">Competenze</h3>
                   <p className="text-sm text-gray-600">
-                    ~87,5% non dispone ancora di un team IA interno strutturato 
+                    ~87,5% non dispone ancora di un team IA interno strutturato
                     (nessuna o competenze molto limitate)
                   </p>
                 </div>
@@ -443,10 +433,9 @@ const VisioniPresentation = () => {
         </div>
       )}
 
-      {/* DETTAGLI ASSESSMENT */}
+      {/* SEZIONE "DETTAGLI ASSESSMENT" */}
       {activeSection === 'details' && (
         <div className="space-y-8">
-          {/* Stato attuale */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -456,7 +445,6 @@ const VisioniPresentation = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {/* Numero di questionari */}
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-green-600 mt-1" />
                   <div>
@@ -466,7 +454,6 @@ const VisioniPresentation = () => {
                     </p>
                   </div>
                 </div>
-                {/* Laboratori */}
                 <div className="flex items-start gap-3">
                   <Target className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
@@ -476,7 +463,6 @@ const VisioniPresentation = () => {
                     </p>
                   </div>
                 </div>
-                {/* Percentuale che sta già facendo progetti IA */}
                 <div className="flex items-start gap-3">
                   <LineChart className="w-5 h-5 text-purple-600 mt-1" />
                   <div>
@@ -484,7 +470,7 @@ const VisioniPresentation = () => {
                       ~43,27% già attivo con l&apos;IA
                     </p>
                     <p className="text-sm text-gray-600">
-                      (30,50% in fase pilota, 12,77% con soluzioni operative, 0,71% integrata)
+                      (30,50% in fase pilota, 12,77% operative, 0,71% integrata)
                     </p>
                   </div>
                 </div>
@@ -492,7 +478,6 @@ const VisioniPresentation = () => {
             </CardContent>
           </Card>
 
-          {/* Benefici attesi */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -512,24 +497,28 @@ const VisioniPresentation = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Workflow className="w-5 h-5 text-blue-600 mt-1" />
+                  {/* SOSTITUITO 'Workflow' con 'Sliders' */}
+                  <Sliders className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
                     <p className="font-semibold">Automazione (34,75%)</p>
-                    <p className="text-sm text-gray-600">Riduzione di attività ripetitive</p>
+                    <p className="text-sm text-gray-600">
+                      Riduzione di attività ripetitive
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <MessageSquare className="w-5 h-5 text-green-600 mt-1" />
                   <div>
                     <p className="font-semibold">Marketing e vendite (48,23%)</p>
-                    <p className="text-sm text-gray-600">Potenziamento attività commerciali</p>
+                    <p className="text-sm text-gray-600">
+                      Potenziamento attività commerciali
+                    </p>
                   </div>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Sfide e barriere */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -555,7 +544,7 @@ const VisioniPresentation = () => {
                   <div>
                     <p className="font-semibold">Identificazione casi d&apos;uso (48,28%)</p>
                     <p className="text-sm text-gray-600">
-                      Difficoltà nell’individuare le applicazioni più rilevanti
+                      Difficoltà nel trovare le applicazioni più rilevanti
                     </p>
                   </div>
                 </div>
@@ -564,7 +553,7 @@ const VisioniPresentation = () => {
                   <div>
                     <p className="font-semibold">Incertezza benefici (43,97%)</p>
                     <p className="text-sm text-gray-600">
-                      Indecisione riguardo al ROI e ai vantaggi tangibili
+                      Indecisione sui vantaggi e sul ROI dell’IA
                     </p>
                   </div>
                 </div>
@@ -572,7 +561,6 @@ const VisioniPresentation = () => {
             </CardContent>
           </Card>
 
-          {/* Necessità di supporto */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -613,7 +601,6 @@ const VisioniPresentation = () => {
             </CardContent>
           </Card>
 
-          {/* Prospettive future */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -637,7 +624,7 @@ const VisioniPresentation = () => {
                   <div>
                     <p className="font-semibold">Livello base (65,96%)</p>
                     <p className="text-sm text-gray-600">
-                      Le aziende puntano innanzitutto a soluzioni a supporto dei processi
+                      Le aziende puntano innanzitutto a soluzioni di supporto ai processi
                     </p>
                   </div>
                 </div>
@@ -654,7 +641,6 @@ const VisioniPresentation = () => {
             </CardContent>
           </Card>
 
-          {/* Raccomandazioni */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -674,7 +660,8 @@ const VisioniPresentation = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Workflow className="w-5 h-5 text-blue-600 mt-1" />
+                  {/* SOSTITUITO 'Workflow' con 'Sliders' */}
+                  <Sliders className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
                     <p className="font-semibold">Approccio graduale</p>
                     <p className="text-sm text-gray-600">
@@ -706,7 +693,7 @@ const VisioniPresentation = () => {
         </div>
       )}
 
-      {/* SEZIONE INNOVAZIONE SISTEMICA RIMOSSA */}
+      {/* Sezione "INNOVAZIONE SISTEMICA" rimossa del tutto */}
     </div>
   );
 };
