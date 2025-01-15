@@ -1,27 +1,29 @@
-// src/components/VisioniPresentation.tsx
-
 'use client'
+
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { 
-  BarChart, 
-  Bar, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  PieChart, 
-  Pie, 
-  Cell, 
-  ResponsiveContainer 
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer
 } from 'recharts';
-import { 
-  Brain, 
-  Target, 
-  Users, 
-  Lightbulb, 
-  TrendingUp, 
-  CheckCircle2, 
+
+// Importiamo SOLO le icone realmente esistenti in lucide-react
+// ed effettivamente usate nel componente
+import {
+  Brain,
+  Target,
+  Users,
+  Lightbulb,
+  TrendingUp,
+  CheckCircle2,
   AlertTriangle,
   MapPin,
   Briefcase,
@@ -29,12 +31,14 @@ import {
   ArrowUpRight,
   Book,
   Banknote
+  // Se serve, puoi importare anche MessageSquare, se davvero lo usi:
+  // MessageSquare
 } from 'lucide-react';
 
 const VisioniPresentation = () => {
   const [activeSection, setActiveSection] = useState<'results' | 'details' | 'innovation'>('results');
 
-  // Esempio di palette colori per i PieChart
+  // Esempio di palette colori per eventuali grafici a torta
   const COLORS = [
     '#2563EB',
     '#3B82F6',
@@ -48,9 +52,11 @@ const VisioniPresentation = () => {
     '#3730A3'
   ];
 
-  // ==============================
-  // Dati di esempio per la sezione “results”
-  // ==============================
+  // ===========================
+  // Dati d'esempio (aggiornati)
+  // ===========================
+
+  // Esempio: distribuzione assessment nei territori
   const assessmentDistribution = [
     { name: 'Ravenna', value: 35 },
     { name: 'Forlì-Cesena', value: 15 },
@@ -64,15 +70,17 @@ const VisioniPresentation = () => {
     { name: 'Parma', value: 10 }
   ];
 
+  // Esempio: settori di attività
   const companySectors = [
     { name: 'Metalmeccanica', value: 31 },
     { name: 'Informatica/Consulenza', value: 29 },
     { name: 'Altro', value: 28 },
     { name: 'Costruzioni/Impiantistica', value: 19 },
-    { name: 'Commercio', value: 15 },
-    // ... e così via ...
+    { name: 'Commercio', value: 15 }
+    // ecc.
   ];
 
+  // Esempio: stato adozione IA
   const adoptionStatus = [
     { name: 'Non pianificata', value: 10.64 },
     { name: 'In valutazione', value: 45.39 },
@@ -81,6 +89,7 @@ const VisioniPresentation = () => {
     { name: 'Integrata', value: 0.71 }
   ];
 
+  // Esempio: benefici attesi
   const expectedBenefits = [
     { name: 'Produttività', value: 58.87 },
     { name: 'Marketing', value: 48.23 },
@@ -89,6 +98,7 @@ const VisioniPresentation = () => {
     { name: 'Riduzione costi', value: 29.79 }
   ];
 
+  // Esempio: IA generativa
   const aiApplications = [
     { name: 'Gen. contenuti', value: 80.45 },
     { name: 'Gen. immagini', value: 53.38 },
@@ -97,6 +107,7 @@ const VisioniPresentation = () => {
     { name: 'Gen. audio', value: 9.02 }
   ];
 
+  // Esempio: sfide implementative
   const implementationChallenges = [
     { name: 'Mancanza conoscenza', value: 57.76 },
     { name: 'Identificazione casi uso', value: 48.28 },
@@ -105,11 +116,9 @@ const VisioniPresentation = () => {
     { name: 'Costi implementazione', value: 18.97 }
   ];
 
-  // ==============================
-  // Dati di esempio per la sezione “details”
-  // ==============================
+  // Sezione "details" - dati fittizi come esempio
   const totalAssessments = 141;
-  const alreadyActivePercentage = 44.0; // progetti pilota + operative + integrate
+  const alreadyActivePercentage = 44.0; // somma di progetti pilota + operative + integrate
   const detailsBenefitsData = [
     { label: 'Efficienza operativa', value: 58.87 },
     { label: 'Marketing e vendite', value: 48.23 },
@@ -133,7 +142,7 @@ const VisioniPresentation = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto p-4">
-      {/* Navigation Tabs */}
+      {/* TABS DI NAVIGAZIONE */}
       <div className="flex gap-4 mb-8">
         <button
           className={`px-4 py-2 rounded-lg ${
@@ -161,12 +170,11 @@ const VisioniPresentation = () => {
         </button>
       </div>
 
-      {/* ==============================
-          SEZIONE: RISULTATI PRINCIPALI
-       ============================== */}
+      {/* =========================
+          SEZIONE: RISULTATI
+      ========================= */}
       {activeSection === 'results' && (
         <div className="space-y-8">
-          {/* Header Card */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-blue-800">
@@ -176,7 +184,7 @@ const VisioniPresentation = () => {
             <CardContent>
               <div className="grid grid-cols-3 gap-4">
                 <div className="p-4 bg-blue-50 rounded-lg">
-                  <div className="text-3xl font-bold text-blue-800">141</div>
+                  <div className="text-3xl font-bold text-blue-800">{totalAssessments}</div>
                   <div className="text-sm text-gray-600">Assessment completati</div>
                 </div>
                 <div className="p-4 bg-blue-50 rounded-lg">
@@ -193,7 +201,7 @@ const VisioniPresentation = () => {
             </CardContent>
           </Card>
 
-          {/* Distribuzione assessment */}
+          {/* Distribuzione Assessment */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -214,7 +222,7 @@ const VisioniPresentation = () => {
                 </ResponsiveContainer>
               </div>
               <p className="mt-4 text-sm text-gray-600">
-                La maggior parte degli assessment è stata condotta a Ravenna (24,82%, 35 aziende). Seguono Forlì-Cesena (10,64%, 15 aziende), Rimini (9,93%, 14 aziende) e così via.
+                La maggior parte degli assessment è stata condotta a Ravenna (24,82%, 35 aziende). Seguono Forlì-Cesena (10,64%), Rimini (9,93%), ecc.
               </p>
             </CardContent>
           </Card>
@@ -240,12 +248,12 @@ const VisioniPresentation = () => {
                 </ResponsiveContainer>
               </div>
               <p className="mt-4 text-sm text-gray-600">
-                I settori principali risultano essere la Metalmeccanica (31 aziende), l’Informatica/Consulenza (29 aziende) e così via.
+                I settori principali risultano essere la Metalmeccanica (31 aziende), l’Informatica/Consulenza (29), ecc.
               </p>
             </CardContent>
           </Card>
 
-          {/* Stato adozione */}
+          {/* Stato adozione AI */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -266,8 +274,8 @@ const VisioniPresentation = () => {
                       dataKey="value"
                       label={({ name, value }) => `${name}: ${value}%`}
                     >
-                      {adoptionStatus.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      {adoptionStatus.map((entry, idx) => (
+                        <Cell key={idx} fill={COLORS[idx % COLORS.length]} />
                       ))}
                     </Pie>
                     <Tooltip />
@@ -275,7 +283,7 @@ const VisioniPresentation = () => {
                 </ResponsiveContainer>
               </div>
               <p className="mt-4 text-sm text-gray-600">
-                Il 10,64% non pianifica l’adozione di IA, il 45,39% è in valutazione, il 30,50% in progetti pilota, e così via.
+                Circa il 10,64% non pianifica l'adozione di IA, il 45,39% la sta valutando, ecc.
               </p>
             </CardContent>
           </Card>
@@ -301,12 +309,12 @@ const VisioniPresentation = () => {
                 </ResponsiveContainer>
               </div>
               <p className="mt-4 text-sm text-gray-600">
-                Principali benefici attesi: aumento di produttività (58,87%), marketing (48,23%), ecc.
+                I principali benefici attesi includono l’aumento di produttività (58,87%) e il potenziamento di marketing/vendite (48,23%).
               </p>
             </CardContent>
           </Card>
 
-          {/* IA generativa */}
+          {/* AI generativa */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -327,7 +335,7 @@ const VisioniPresentation = () => {
                 </ResponsiveContainer>
               </div>
               <p className="mt-4 text-sm text-gray-600">
-                Le aree di maggiore interesse sono la generazione di contenuti (80,45%), immagini e video (53,38%) ecc.
+                Le aree di maggior interesse: generazione di testi (80,45%), immagini (53,38%), progetti/design (37,59%), e così via.
               </p>
             </CardContent>
           </Card>
@@ -353,19 +361,18 @@ const VisioniPresentation = () => {
                 </ResponsiveContainer>
               </div>
               <p className="mt-4 text-sm text-gray-600">
-                Tra le sfide più rilevanti spiccano la mancanza di conoscenza (57,76%) e l’identificazione dei casi d’uso (48,28%).
+                Le principali barriere all’adozione dell’IA includono la mancanza di conoscenze (57,76%) e la difficoltà d’identificazione dei casi d’uso (48,28%).
               </p>
             </CardContent>
           </Card>
         </div>
       )}
 
-      {/* ==============================
-          SEZIONE: DETTAGLI ASSESSMENT
-       ============================== */}
+      {/* =========================
+          SEZIONE: DETTAGLI
+      ========================= */}
       {activeSection === 'details' && (
         <div className="space-y-8">
-          {/* Esempio sezione dettagli */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -379,22 +386,26 @@ const VisioniPresentation = () => {
                   <CheckCircle2 className="w-5 h-5 text-green-600 mt-1" />
                   <div>
                     <p className="font-semibold">{totalAssessments} assessment completati</p>
-                    <p className="text-sm text-gray-600">Panoramica su IA readiness e digitalizzazione</p>
+                    <p className="text-sm text-gray-600">
+                      Panoramica approfondita sul livello di digitalizzazione e IA readiness
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Target className="w-5 h-5 text-blue-600 mt-1" />
                   <div>
                     <p className="font-semibold">Laboratori realizzati</p>
-                    <p className="text-sm text-gray-600">Stato avanzamento: 100% dei workshop previsti</p>
+                    <p className="text-sm text-gray-600">
+                      Completato il 100% degli incontri e delle sessioni formative previste
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <LineChart className="w-5 h-5 text-purple-600 mt-1" />
                   <div>
-                    <p className="font-semibold">{alreadyActivePercentage}% aziende già attive</p>
+                    <p className="font-semibold">{alreadyActivePercentage}% di aziende attive</p>
                     <p className="text-sm text-gray-600">
-                      Include fase pilota (30,50%), soluzioni operative (12,77%) e integrate (0,71%)
+                      30,50% in progetti pilota, 12,77% con soluzioni operative, 0,71% integrate
                     </p>
                   </div>
                 </div>
@@ -402,7 +413,7 @@ const VisioniPresentation = () => {
             </CardContent>
           </Card>
 
-          {/* Altri dettagli, benefici, sfide, etc. */}
+          {/* Benefici attesi - dettaglio */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -417,12 +428,11 @@ const VisioniPresentation = () => {
                   <div>
                     <p className="font-semibold">{item.label} ({item.value}%)</p>
                     <p className="text-sm text-gray-600">
-                      {/* Esempio di descrizione */}
                       {item.label === 'Efficienza operativa'
-                        ? 'Riduzione tempi e costi, ottimizzazione processi'
+                        ? 'Riduzione tempi, costi e ottimizzazione processi.'
                         : item.label === 'Marketing e vendite'
-                        ? 'Miglioramento targeting, strategie e customer journey'
-                        : 'Riduzione di operazioni ripetitive e time-to-market'}
+                        ? 'Potenziamento strategie commerciali e targeting.'
+                        : 'Automazione di compiti ripetitivi e a basso valore.'}
                     </p>
                   </div>
                 </div>
@@ -430,6 +440,7 @@ const VisioniPresentation = () => {
             </CardContent>
           </Card>
 
+          {/* Sfide e barriere */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -442,13 +453,15 @@ const VisioniPresentation = () => {
                 <div key={idx} className="flex items-start gap-3 mb-3">
                   <Book className="w-5 h-5 text-red-600 mt-1" />
                   <div>
-                    <p className="font-semibold">{item.label} ({item.value}%)</p>
+                    <p className="font-semibold">
+                      {item.label} ({item.value}%)
+                    </p>
                     <p className="text-sm text-gray-600">
                       {item.label === 'Gap di conoscenza'
-                        ? 'Mancanza di competenze e know-how'
+                        ? 'Carente consapevolezza delle opportunità IA.'
                         : item.label === 'Identificazione casi d’uso'
-                        ? 'Difficoltà a trovare applicazioni concrete'
-                        : 'Incertezza su ROI e vantaggi reali'}
+                        ? 'Fatica nel trovare applicazioni concrete e prioritarie.'
+                        : 'Incertezza sui benefici tangibili e sul ROI.'}
                     </p>
                   </div>
                 </div>
@@ -456,6 +469,7 @@ const VisioniPresentation = () => {
             </CardContent>
           </Card>
 
+          {/* Necessità di supporto */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -472,7 +486,7 @@ const VisioniPresentation = () => {
                       Consulenza specialistica ({supportNeeds.expertConsulting}%)
                     </p>
                     <p className="text-sm text-gray-600">
-                      Aiuto nell’identificare e implementare use case di IA.
+                      Identificare e implementare i casi d’uso IA più promettenti.
                     </p>
                   </div>
                 </div>
@@ -483,7 +497,7 @@ const VisioniPresentation = () => {
                       Formazione ({supportNeeds.trainingEvents}%)
                     </p>
                     <p className="text-sm text-gray-600">
-                      Eventi divulgativi e workshop specialistici.
+                      Workshop, corsi e training on the job dedicati ai temi IA.
                     </p>
                   </div>
                 </div>
@@ -494,7 +508,7 @@ const VisioniPresentation = () => {
                       Finanziamenti ({supportNeeds.fundingSupport}%)
                     </p>
                     <p className="text-sm text-gray-600">
-                      Accesso a bandi e incentivi fiscali per innovazione.
+                      Supporto per l’accesso a bandi, agevolazioni fiscali e fondi pubblici.
                     </p>
                   </div>
                 </div>
@@ -502,6 +516,7 @@ const VisioniPresentation = () => {
             </CardContent>
           </Card>
 
+          {/* Prospettive future */}
           <Card className="bg-white">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-blue-800 flex items-center gap-2">
@@ -518,7 +533,7 @@ const VisioniPresentation = () => {
                       Alto interesse ({futureProspects.highInterest}%)
                     </p>
                     <p className="text-sm text-gray-600">
-                      Previsione di adozione IA nei prossimi 1-2 anni
+                      Adozione IA prevista nei prossimi 1-2 anni
                     </p>
                   </div>
                 </div>
@@ -529,7 +544,7 @@ const VisioniPresentation = () => {
                       Ambizione di base ({futureProspects.baseAmbition}%)
                     </p>
                     <p className="text-sm text-gray-600">
-                      Implementare inizialmente soluzioni di supporto ai processi
+                      Puntare a soluzioni di supporto ai processi core
                     </p>
                   </div>
                 </div>
@@ -540,7 +555,7 @@ const VisioniPresentation = () => {
                       Innovazione ({futureProspects.innovationAspirations}%)
                     </p>
                     <p className="text-sm text-gray-600">
-                      Leadership di settore e potenziale trasformazione del modello di business
+                      Diventare leader e trasformare il modello di business
                     </p>
                   </div>
                 </div>
